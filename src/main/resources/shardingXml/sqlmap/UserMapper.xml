@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+
+	<insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="com.lxx.demo.shardingjdbc.model.User">
+	    insert into tb_user (name,date,userid) values(#{name},now(),#{userid})
+	</insert>
+	
+	<select id="find" resultType="com.lxx.demo.shardingjdbc.model.User">
+		select * from tb_user order by userid
+	</select>
+	
+
+</mapper>
